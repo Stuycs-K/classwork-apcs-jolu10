@@ -1,3 +1,5 @@
+public class MyArrays {
+
 public static String aryToString (int[] nums) {
   String ans = "[";
   for (int i=0; i<nums.length; i++) {
@@ -6,14 +8,15 @@ public static String aryToString (int[] nums) {
       ans = ans + ", ";
     }
   }
+  ans = ans + "]";
   return ans;
 }
 
 
 public static void main (String args[]) {
-  int[] = a;
+  int[] a = new int[] {1, 3, 7};
 
    // test case aryToString:
-   a=[1, 3, 7];
-   System.out.println("Expected "[1, 3, 7]" +" vs my function: "+ aryToString[a];
+   System.out.println("Expected [1, 3, 7] vs my function: " + aryToString(a));
+}
 }
