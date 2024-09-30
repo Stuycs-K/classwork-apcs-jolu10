@@ -12,7 +12,7 @@ public static String aryToString (int[] nums) {
   return ans;
 }
 
-public static int[] returnCopy(int[]ary) {
+public static int[] returnCopy(int[]ary) { // make new array, make each item in the array the same as the given array
   int[] copy = new int[ary.length];
   int i = 0;
   for (int num : ary){
@@ -22,8 +22,8 @@ public static int[] returnCopy(int[]ary) {
   return copy;
 }
 
-public static int[] concatArray(int[]ary1,int[]ary2) {
-  int[] result = new int[ary1.length + ary2.length];
+public static int[] concatArray(int[]ary1,int[]ary2) { 
+  int[] result = new int[ary1.length + ary2.length]; // makes new array same length as the length of the given arrays added together
   for (int i = 0; i < ary1.length; i++) {
     result[i] = ary1[i];
   }
