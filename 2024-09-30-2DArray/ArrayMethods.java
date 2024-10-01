@@ -33,7 +33,7 @@ public class ArrayMethods {
     for (int i = 0; i < ary.length; i++) {
       x += "["; // inner bracket
 
-      for (int n = 0; n < ary.length; n++) {
+      for (int n = 0; n < ary[i].length; n++) {
         x += ary[i][n];
 
         if (n < ary[i].length - 1) {
@@ -56,8 +56,8 @@ public class ArrayMethods {
   //  use a nested loop to solve this
   int result = 0;
   for (int i = 0; i < nums.length; i++) { // goes through each row
-    for (int x = 0; x < nums[i].length; x++) { // goes through each element in the row
-      result = result + nums[i][x]; // adds the number at the current element in the current row to the result
+    for (int n = 0; n < nums[i].length; n++) { // goes through each element in the row
+      result = result + nums[i][n]; // adds the number at the current element in the current row to the result
     }
   }
   return result;
@@ -67,9 +67,9 @@ public class ArrayMethods {
     * You may assume the array is rectangular and neither rows nor cols is 0.
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
-  public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
-  }
+//  public static int[][] swapRC(int[][]nums){
+//    return new int[1][1];
+
   public static void main (String args[]){
     int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
     int[][] ary2 = new int[][]{{4,3,2},{5,6},{9,4,3}};
@@ -80,7 +80,7 @@ public class ArrayMethods {
     System.out.println("Expected: [[4, 3, 2], [5, 6], [9, 4, 3]] vs my function: " + arrToString(ary2));
     System.out.println("Expected: [[1], [3, 2, 1], [0, 0, 0]] vs my function: " + arrToString(ary3));
     // test cases for arr2DSum
-    System.out.println("Expected: 9 vs my function: " + arr2DSum(ary1));
+    System.out.println("Expected: 45 vs my function: " + arr2DSum(ary1));
     System.out.println("Expected: 36 vs my function: " + arr2DSum(ary2));
     System.out.println("Expected: 7 vs my function: " + arr2DSum(ary3));
   }
