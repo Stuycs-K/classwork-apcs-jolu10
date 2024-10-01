@@ -78,23 +78,33 @@ public class ArrayMethods {
   }
 
   public static void main (String args[]){
-    int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
-    int[][] ary2 = new int[][]{{4,3,2},{5,6},{9,4,3}};
-    int[][] ary3 = new int[][]{{1},{3,2,1},{0,0,0}};
-    int[][] ary4 = new int[][]{{0, 3},{5, 6},{8, 5}};
-    int[][] ary5 = new int[][]{{4, 5, 6, 2},{8, 9, 0, 1}};
+    int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // square array
+    int[][] ary2 = new int[][]{{4,3,2,1},{5,6,7,3},{9,4,3,2}}; // rectangular array
+    int[][] ary3 = new int[][]{{},{},{0,0,0}};
+    int[][] ary4 = new int[][]{{0, 3},{5, 6},{8, 5}}; // rectangular array
+    int[][] ary5 = new int[][]{{4, 5, 6, 2},{8, 9, 0, 1}}; // rectangular array
+    int[][] ary6 = new int[][] {{}, {}, {}, {}}; // empty array
+    int[][] ary7 = new int[][] {{3,4},{4, 4, 3},{6},{9,7}}; // ragged array
 
 // test cases for arrToString
     System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
-    System.out.println("Expected: [[4, 3, 2], [5, 6], [9, 4, 3]] vs my function: " + arrToString(ary2));
-    System.out.println("Expected: [[1], [3, 2, 1], [0, 0, 0]] vs my function: " + arrToString(ary3));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(ary2));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + arrToString(ary3));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(ary6));
+    System.out.println("Expected: [[3, 4], [4, 4, 3], [6], [9, 7]] vs my function: " + arrToString(ary7));
+
     // test cases for arr2DSum
     System.out.println("Expected: 45 vs my function: " + arr2DSum(ary1));
-    System.out.println("Expected: 36 vs my function: " + arr2DSum(ary2));
-    System.out.println("Expected: 7 vs my function: " + arr2DSum(ary3));
+    System.out.println("Expected: 49 vs my function: " + arr2DSum(ary2));
+    System.out.println("Expected: 0 vs my function: " + arr2DSum(ary3));
+    System.out.println("Expected: 0 vs my function: " + arr2DSum(ary6));
+    System.out.println("Expected: 40 vs my function: " + arr2DSum(ary7));
+
     // test cases for swapRC
-    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(swapRC(ary1)));
+    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]] vs my function: " + arrToString(swapRC(ary1)));
+    System.out.println("Expected: [[4, 5, 9], [3, 6, 4], [2, 7, 3], [1, 3, 2]] vs my function: " + arrToString(swapRC(ary2)));
     System.out.println("Expected: [[0, 5, 8], [3, 6, 5]] vs my function: " + arrToString(swapRC(ary4)));
     System.out.println("Expected: [[4, 8], [5, 9], [6, 0], [2, 1]] vs my function: " + arrToString(swapRC(ary5)));
+    System.out.println("Expected: [] vs my function: " + arrToString(swapRC(ary6)));
   }
 }
