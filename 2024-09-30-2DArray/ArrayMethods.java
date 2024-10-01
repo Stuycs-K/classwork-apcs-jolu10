@@ -77,6 +77,35 @@ public class ArrayMethods {
     return result;
   }
 
+  //3. Modify a given 2D array of integer as follows:
+//Replace all the negative values:
+//-When the row number is the same as the column number replace
+//that negative with the value 1
+//-All other negatives replace with 0
+public static void replaceNegative(int[][] vals){
+  int[][] result = new int[vals[0].length][vals.length];
+  for (int i = 0; i < nums.length; i++) {
+    for (int n = 0; n < nums[i].length; n++) {
+      if (vals[i][n] < 0) {
+        if (i == n) {
+          vals[i][n] = 1;
+        }
+        else {
+          vals[i][n] = 0;
+        }
+      }
+      return result;
+}
+
+//4. Make a copy of the given 2d array.
+//When testing : make sure that changing the original does NOT change the copy.
+//DO NOT use any built in methods that "copy" an array.
+//You SHOULD write a helper method for this.
+//If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[][] copy(int[][] nums){
+  return null;//placeholder so it compiles
+}
+
   public static void main (String args[]){
     int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // square array
     int[][] ary2 = new int[][]{{4,3,2,1},{5,6,7,3},{9,4,3,2}}; // rectangular array
