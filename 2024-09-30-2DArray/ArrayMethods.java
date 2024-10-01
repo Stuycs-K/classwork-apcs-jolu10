@@ -54,7 +54,14 @@ public class ArrayMethods {
   /*Return the sum of all of the values in the 2D array */
    public static int arr2DSum(int[][]nums){
   //  use a nested loop to solve this
-   }
+  int result = 0;
+  for (int i = 0; i < nums.length; i++) { // goes through each row
+    for (int x = 0; x < nums[i].length; x++) { // goes through each element in the row
+      result = result + nums[i][x]; // adds the number at the current element in the current row to the result
+    }
+  }
+  return result;
+}
 
   /**Rotate an array by returning a new array with the rows and columns swapped.
     * You may assume the array is rectangular and neither rows nor cols is 0.
@@ -68,8 +75,13 @@ public class ArrayMethods {
     int[][] ary2 = new int[][]{{4,3,2},{5,6},{9,4,3}};
     int[][] ary3 = new int[][]{{1},{3,2,1},{0,0,0}};
 
+// test cases for arrToString
     System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
     System.out.println("Expected: [[4, 3, 2], [5, 6], [9, 4, 3]] vs my function: " + arrToString(ary2));
     System.out.println("Expected: [[1], [3, 2, 1], [0, 0, 0]] vs my function: " + arrToString(ary3));
+    // test cases for arr2DSum
+    System.out.println("Expected: 9 vs my function: " + arr2DSum(ary1));
+    System.out.println("Expected: 36 vs my function: " + arr2DSum(ary2));
+    System.out.println("Expected: 7 vs my function: " + arr2DSum(ary3));
   }
 }
