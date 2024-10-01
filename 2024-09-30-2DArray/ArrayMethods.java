@@ -67,13 +67,22 @@ public class ArrayMethods {
     * You may assume the array is rectangular and neither rows nor cols is 0.
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
-//  public static int[][] swapRC(int[][]nums){
-//    return new int[1][1];
+  public static int[][] swapRC(int[][]nums){ // swaps rows and columns: 2 rows 3 columns becomes 3 rows 2 columns and vice versa
+    int[][] result = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      for (int n = 0; n < nums[i].length; n++) {
+        result[n][i] = nums[i][n];
+      }
+    }
+    return result;
+  }
 
   public static void main (String args[]){
     int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
     int[][] ary2 = new int[][]{{4,3,2},{5,6},{9,4,3}};
     int[][] ary3 = new int[][]{{1},{3,2,1},{0,0,0}};
+    int[][] ary4 = new int[][]{{0, 3},{5, 6},{8, 5}};
+    int[][] ary5 = new int[][]{{4, 5, 6, 2},{8, 9, 0, 1}};
 
 // test cases for arrToString
     System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
@@ -83,5 +92,9 @@ public class ArrayMethods {
     System.out.println("Expected: 45 vs my function: " + arr2DSum(ary1));
     System.out.println("Expected: 36 vs my function: " + arr2DSum(ary2));
     System.out.println("Expected: 7 vs my function: " + arr2DSum(ary3));
+    // test cases for swapRC
+    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(swapRC(ary1)));
+    System.out.println("Expected: [[0, 5, 8], [3, 6, 5]] vs my function: " + arrToString(swapRC(ary4)));
+    System.out.println("Expected: [[4, 8], [5, 9], [6, 0], [2, 1]] vs my function: " + arrToString(swapRC(ary5)));
   }
 }
