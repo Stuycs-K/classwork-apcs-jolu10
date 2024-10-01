@@ -40,6 +40,7 @@ public class ArrayMethods {
           x += ", "; // comma + space between values
         }
       }
+
       x += "]"; // inner bracket
 
       if (i < ary.length - 1) {
@@ -64,6 +65,11 @@ public class ArrayMethods {
   }
   public static void main (String args[]){
     int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+    int[][] ary2 = new int[][]{{4,3,2},{5,6},{9,4,3}};
+    int[][] ary3 = new int[][]{{1},{3,2,1},{0,0,0}};
+
     System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
+    System.out.println("Expected: [[4, 3, 2], [5, 6], [9, 4, 3]] vs my function: " + arrToString(ary2));
+    System.out.println("Expected: [[1], [3, 2, 1], [0, 0, 0]] vs my function: " + arrToString(ary3));
   }
 }
