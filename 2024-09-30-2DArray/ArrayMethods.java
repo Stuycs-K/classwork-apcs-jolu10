@@ -71,7 +71,7 @@ public class ArrayMethods {
     int[][] result = new int[nums[0].length][nums.length];
     for (int i = 0; i < nums.length; i++) {
       for (int n = 0; n < nums[i].length; n++) {
-        result[n][i] = nums[i][n];
+        result[n][i] = nums[i][n]; // swaps nums[rows][columns] into result[columns][rows]
       }
     }
     return result;
