@@ -29,13 +29,31 @@ public class ArrayMethods {
     */
   public static String arrToString(int[][]ary){
     //this should use arrToString(int[])
-    return "";
+    String x = "["; // outer bracket
+    for (int i = 0; i < ary.length; i++) {
+      x += "["; // inner bracket
+
+      for (int n = 0; n < ary.length; n++) {
+        x += ary[i][n];
+
+        if (n < ary[i].length - 1) {
+          x += ", "; // comma + space between values
+        }
+      }
+      x += "]"; // inner bracket
+
+      if (i < ary.length - 1) {
+        x += ", "; // comma + space between arrays
+      }
+    }
+    x += "]"; // outer bracket
+    return x;
   }
 
   /*Return the sum of all of the values in the 2D array */
-  public static int arr2DSum(int[][]nums){
-    //use a nested loop to solve this
-  }
+   public static int arr2DSum(int[][]nums){
+  //  use a nested loop to solve this
+   }
 
   /**Rotate an array by returning a new array with the rows and columns swapped.
     * You may assume the array is rectangular and neither rows nor cols is 0.
@@ -45,7 +63,7 @@ public class ArrayMethods {
     return new int[1][1];
   }
   public static void main (String args[]){
-    int[][] ary1 = new int[]{{1,2,3},{4,5,6},{7,8,9}};
-    System.out.println("Expected: [[1,2,3],[4,5,6],[7,8,9]] vs my function: " + arrToString(ary1));
+    int[][] ary1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] vs my function: " + arrToString(ary1));
   }
 }
