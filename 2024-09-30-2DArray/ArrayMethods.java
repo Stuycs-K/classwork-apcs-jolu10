@@ -144,6 +144,13 @@ public static void replaceNegative(int[][] vals){
     System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + replaceNegative(ary3));
     System.out.println("Expected: [[0, 3], [5, -1], [8, 5]] vs my function: " + replaceNegative(ary4));
     System.out.println("Expected: [] vs my function: " + replaceNegative(ary6));
-    System.out.println("Expected: [[-1, 0, 0], [0, -1, 0], [0, 0, -1]] vs my function: " + replaceNegative(ary8));
+    System.out.println("Expected: [[[-1, 0, 0], [0, -1, 0], [0, 0, -1]]] vs my function: " + replaceNegative(ary7));
+
+    // test cases for copy
+    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + copy(ary1));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + copy(ary2));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + copy(ary3));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + copy(ary6));
+    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + copy(ary8));
   }
 }
