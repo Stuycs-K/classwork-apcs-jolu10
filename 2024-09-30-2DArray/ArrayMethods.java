@@ -102,9 +102,9 @@ public static void replaceNegative(int[][] vals){
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
- // public static int[][] copy(int[][] nums){
-//  return null;//placeholder so it compiles
-//}
+  public static int[][] copy(int[][] nums){
+  return null;//placeholder so it compiles
+}
 
   public static void main (String args[]){
     int[][] ary1 = new int[][]{{1,-2,3},{4,5,6},{7,8,-9}}; // square array
@@ -150,10 +150,10 @@ public static void replaceNegative(int[][] vals){
     System.out.println("Expected: [[[1, 0, 0], [0, 1, 0], [0, 0, 1]]] vs my function: " + arrToString(ary8));
 
     // test cases for copy
-    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + copy(ary1));
-    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + copy(ary2));
-    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + copy(ary3));
-    System.out.println("Expected: [[], [], [], []] vs my function: " + copy(ary6));
-    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + copy(ary8)); 
+    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + arrToString(copy(ary1)));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(copy(ary2)));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + arrToString(copy(ary3)));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(copy(ary6)));
+    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + arrToString(copy(ary8)));
   }
 }
