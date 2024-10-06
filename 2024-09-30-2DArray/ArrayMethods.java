@@ -103,8 +103,20 @@ public static void replaceNegative(int[][] vals){
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
-}
+    int[][] result = new int[nums.length][];
+    for (int i=0; i<nums.length; i++) {
+      result[i] = copy1(nums[i]);
+    }
+    return result;
+  }
+
+  public static int[] copy1(int[] num){
+    int[] arrayCopy = new int[num.length];
+    for (int i=0; i<num.length; i++){
+      arrayCopy[i] = num[i];
+    }
+    return arrayCopy;
+  }
 
   public static void main (String args[]){
     int[][] ary1 = new int[][]{{1,-2,3},{4,5,6},{7,8,-9}}; // square array
@@ -137,6 +149,13 @@ public static void replaceNegative(int[][] vals){
     System.out.println("Expected: [[4, 8], [5, 9], [6, 0], [2, 1]] vs my function: " + arrToString(swapRC(ary5)));
     System.out.println("Expected: [] vs my function: " + arrToString(swapRC(ary6)));
 
+    // test cases for copy
+    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + arrToString(copy(ary1)));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(copy(ary2)));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + arrToString(copy(ary3)));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(copy(ary6)));
+    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + arrToString(copy(ary8)));
+
     // test cases for replaceNegative
     replaceNegative(ary1);
     replaceNegative(ary3);
@@ -148,12 +167,5 @@ public static void replaceNegative(int[][] vals){
     System.out.println("Expected: [[0, 3], [5, 1], [8, 5]] vs my function: " + arrToString(ary4));
     System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(ary6));
     System.out.println("Expected: [[[1, 0, 0], [0, 1, 0], [0, 0, 1]]] vs my function: " + arrToString(ary8));
-
-    // test cases for copy
-    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + arrToString(copy(ary1)));
-    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(copy(ary2)));
-    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + arrToString(copy(ary3)));
-    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(copy(ary6)));
-    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + arrToString(copy(ary8)));
   }
 }
