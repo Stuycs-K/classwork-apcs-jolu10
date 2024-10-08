@@ -70,7 +70,18 @@ public class ArrayDemo{
   //that negative with the value 1
   //-All other negatives replace with 0
   public static void replaceNegative(int[][] vals){
-
+    for (int i = 0; i < vals.length; i++) {
+      for (int n = 0; n < vals[i].length; n++) {
+        if (vals[i][n] < 0) {
+          if (i == n) {
+            vals[i][n] = 1;
+          }
+          else {
+            vals[i][n] = 0;
+          }
+        }
+      }
+    }
   }
 
   //4. Make a copy of the given 2d array.
