@@ -90,14 +90,32 @@ public class ArrayDemo{
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-    return new int[1][1];
+    int[][] result = new int[nums.length][];
+    for (int i=0; i<nums.length; i++) {
+      result[i] = copy1(nums[i]);
+    }
+    return result;
+  }
+
+  public static int[] copy1(int[] num){
+    int[] arrayCopy = new int[num.length];
+    for (int i=0; i<num.length; i++){
+      arrayCopy[i] = num[i];
+    }
+    return arrayCopy;
   }
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] result = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      for (int n = 0; n < nums[i].length; n++) {
+        result[n][i] = nums[i][n]; // swaps nums[rows][columns] into result[columns][rows]
+      }
+    }
+    return result;
   }
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
