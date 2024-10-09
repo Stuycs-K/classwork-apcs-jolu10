@@ -13,13 +13,16 @@ public class ArrayDemo{
     int[][] ary6 = new int[][] {{}, {}, {}, {}}; // empty array
     int[][] ary7 = new int[][] {{3,4},{4, 4, 3},{6},{9,7}}; // ragged array
     int[][] ary8 = new int[][] {{-4,-5,-6},{-1,-2,-3},{-7,-8,-9}};
+    int[][] ary9 = new int[][] {{1, 2, 3}};
+    int[] ary0 = new int[] {2, 4, 6, 8}; // 1D array
+    int[] ary = new int[] {1, 3, 5, 7}; // 1D array
 
-// test cases for arrToString
+// test cases for arrToString and Arrays.toString
     System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + arrToString(ary1));
     System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(ary2));
-    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + arrToString(ary3));
+    System.out.println("Expected: [2, 4, 6, 8] vs my function: " + Arrays.toString(ary0));
     System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(ary6));
-    System.out.println("Expected: [[3, 4], [4, 4, 3], [6], [9, 7]] vs my function: " + arrToString(ary7));
+    System.out.println("Expected: [1, 3, 5, 7] vs my function: " + Arrays.toString(ary));
 
     // test cases for arr2DSum
     System.out.println("Expected: 23 vs my function: " + arr2DSum(ary1));
@@ -42,12 +45,9 @@ public class ArrayDemo{
     System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(copy(ary6)));
     System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + arrToString(copy(ary8)));
 
-    // test cases for countZeros2D
-    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + countZeros2D(ary1));
-    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + countZeros2D(ary2));
-    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + countZeros2D(ary3));
-    System.out.println("Expected: [[], [], [], []] vs my function: " + countZeros2D(ary6));
-    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + countZeros2D(ary8));
+    // test cases for htmlTable
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td><td>3</td></tr></table> vs my function: " + htmlTable(ary9));
+    System.out.println("Expected: <table><tr><td>4</td><td>5</td><td>6</td><td>2</td></tr><tr><td>8</td><td>9</td><td>0</td><td>1</td></tr></table> vs my function: " + htmlTable(ary5));
 
     // test cases for replaceNegative
     replaceNegative(ary1);
@@ -60,6 +60,13 @@ public class ArrayDemo{
     System.out.println("Expected: [[0, 3], [5, 1], [8, 5]] vs my function: " + arrToString(ary4));
     System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(ary6));
     System.out.println("Expected: [[[1, 0, 0], [0, 1, 0], [0, 0, 1]]] vs my function: " + arrToString(ary8));
+
+    // test cases for countZeros2D
+    System.out.println("Expected: 1 vs my function: " + countZeros2D(ary1));
+    System.out.println("Expected: 3 vs my function: " + countZeros2D(ary3));
+    System.out.println("Expected: 1 vs my function: " + countZeros2D(ary4));
+    System.out.println("Expected: 0 vs my function: " + countZeros2D(ary6));
+    System.out.println("Expected: 6 vs my function: " + countZeros2D(ary8));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -197,4 +204,5 @@ public class ArrayDemo{
   }
   result += "</table>";
   return result;
+}
 }
