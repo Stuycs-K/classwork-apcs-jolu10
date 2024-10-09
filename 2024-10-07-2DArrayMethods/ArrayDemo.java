@@ -5,7 +5,61 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
+    int[][] ary1 = new int[][]{{1,-2,3},{4,5,6},{7,8,-9}}; // square array
+    int[][] ary2 = new int[][]{{4,3,2,1},{5,6,7,3},{9,4,3,2}}; // rectangular array
+    int[][] ary3 = new int[][]{{},{},{0,0,0}};
+    int[][] ary4 = new int[][]{{0, 3},{5, -6},{8, 5}}; // rectangular array
+    int[][] ary5 = new int[][]{{4, 5, 6, 2},{8, 9, 0, 1}}; // rectangular array
+    int[][] ary6 = new int[][] {{}, {}, {}, {}}; // empty array
+    int[][] ary7 = new int[][] {{3,4},{4, 4, 3},{6},{9,7}}; // ragged array
+    int[][] ary8 = new int[][] {{-4,-5,-6},{-1,-2,-3},{-7,-8,-9}};
 
+// test cases for arrToString
+    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + Arrays.toString(ary1));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(ary2));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + Arrays.toString(ary3));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(ary6));
+    System.out.println("Expected: [[3, 4], [4, 4, 3], [6], [9, 7]] vs my function: " + Arrays.toString(ary7));
+
+    // test cases for arr2DSum
+    System.out.println("Expected: 23 vs my function: " + arr2DSum(ary1));
+    System.out.println("Expected: 49 vs my function: " + arr2DSum(ary2));
+    System.out.println("Expected: 0 vs my function: " + arr2DSum(ary3));
+    System.out.println("Expected: 0 vs my function: " + arr2DSum(ary6));
+    System.out.println("Expected: 40 vs my function: " + arr2DSum(ary7));
+
+    // test cases for swapRC
+    System.out.println("Expected: [[1, 4, 7], [-2, 5, 8], [3, 6, -9]] vs my function: " + Arrays.toString(swapRC(ary1)));
+    System.out.println("Expected: [[4, 5, 9], [3, 6, 4], [2, 7, 3], [1, 3, 2]] vs my function: " + arrToString(swapRC(ary2)));
+    System.out.println("Expected: [[0, 5, 8], [3, -6, 5]] vs my function: " + Arrays.toString(swapRC(ary4)));
+    System.out.println("Expected: [[4, 8], [5, 9], [6, 0], [2, 1]] vs my function: " + arrToString(swapRC(ary5)));
+    System.out.println("Expected: [] vs my function: " + Arrays.toString(swapRC(ary6)));
+
+    // test cases for copy
+    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + Arrays.toString(copy(ary1)));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + arrToString(copy(ary2)));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + Arrays.toString(copy(ary3)));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(copy(ary6)));
+    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + Arrays.toString(copy(ary8)));
+
+    // test cases for countZeros2D
+    System.out.println("Expected: [[1, -2, 3], [4, 5, 6], [7, 8, -9]] vs my function: " + countZeros2D(ary1));
+    System.out.println("Expected: [[4, 3, 2, 1], [5, 6, 7, 3], [9, 4, 3, 2]] vs my function: " + countZeros2D(ary2));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + countZeros2D(ary3));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + countZeros2D(ary6));
+    System.out.println("Expected: [[-4, -5, -6], [-1, -2, -3], [-7, -8, -9] vs my function: " + countZeros2D(ary8));
+
+    // test cases for replaceNegative
+    replaceNegative(ary1);
+    replaceNegative(ary3);
+    replaceNegative(ary4);
+    replaceNegative(ary6);
+    replaceNegative(ary8);
+    System.out.println("Expected: [[1, 0, 3], [4, 5, 6], [7, 8, 1]] vs my function: " + arrToString(ary1));
+    System.out.println("Expected: [[], [], [0, 0, 0]] vs my function: " + arrToString(ary3));
+    System.out.println("Expected: [[0, 3], [5, 1], [8, 5]] vs my function: " + arrToString(ary4));
+    System.out.println("Expected: [[], [], [], []] vs my function: " + arrToString(ary6));
+    System.out.println("Expected: [[[1, 0, 0], [0, 1, 0], [0, 0, 1]]] vs my function: " + arrToString(ary8));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -51,11 +105,12 @@ public class ArrayDemo{
     int count = 0;
     for (int i=0; i<nums.length; i++){
       for (int n=0; n<nums[i].length; n++){
-        if (nums[i][n] = 0){
+        if (nums[i][n] == 0){
           count = count + 1;
       }
     }
   }
+  return count;
 }
 
   //2. Calculate the sum of a 2d array
