@@ -38,7 +38,7 @@ public class Point{
   do not write redundant code.
   */
   public static double distance(Point a, Point b){
-    return Math.sqrt(((a.getX() - b.getX()) * (a.getX() - b.getX())) + ((a.getY() - b.getY()) * (a.getY() - b.getY())));
+    return a.distanceTo(b);
   }
 
 
