@@ -16,8 +16,3 @@ class Main {
       System.out.println(sum);
     }
   }
-
- //1 you need all three imports.
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
