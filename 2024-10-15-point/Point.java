@@ -30,7 +30,7 @@ public class Point{
   Write this method FOURTH, go to the main and do that one first.
   */
   public double distanceTo(Point other){
-    return 0.0;
+    return Math.sqrt(((this.x - other.x) * (this.x - other.x)) + ((this.y - other.y) * (this.y - other.y)));
   }
 
   /*
@@ -38,7 +38,7 @@ public class Point{
   do not write redundant code.
   */
   public static double distance(Point a, Point b){
-    return 0.0;
+    return a.distanceTo(b);
   }
 
 
