@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class TriangleTester {
 
+  public static boolean testTriangle (int side0, int side1, int side2) {
+    return ((side0 + side1 > side2) && (side1 + side2 > side0) && (side2 + side0 > side1));
+  }
+
 public static int countTrianglesA(String filename) {
   int result = 0;
   try {
@@ -24,17 +28,9 @@ public static int countTrianglesA(String filename) {
     }
     scanner.close();
   } catch (FileNotFoundException e) {
-    System.out.println("File not found");
+    System.out.println("File not found.");
   }
   return result;
-}
-
-public static boolean testTriangle (int side0, int side1, int side2) {
-  return ((side0 + side1 > side2) && (side1 + side2 > side0) && (side2 + side0 > side1));
-}
-
-public static void main(String[] args) {
-  System.out.println(countTrianglesA("inputTri.txt"));
 }
 
 public static int countTrianglesB(String filename) {
@@ -42,6 +38,33 @@ public static int countTrianglesB(String filename) {
   try {
     File file = new File(filename);
     Scanner scanner = new Scanner(file);
+    Scanner line;
+    int[][] side = new int[3][3];
+    while (scanner.hasNextLine()) {
+      for (int i = 0; i < 3; i++) {
+        line = new Scanner(scanner.nextLine());
+        for (int j = 0; j < 3; j++) {
+          if (line.hasNext()) {
+            side[i][j] = line.nextInt();
+          }
+        }
+      }
+      for (int i = 0; i < 3; i++) {
+        if (testTriangle(side[0][i], side[1][i], side[2][i])) {
+          result++;
+        }
+      }
+    }
+    scanner.close();
+  } catch (FileNotFoundException e) {
+    System.out.println("File not found.");
   }
+  return result;
 }
+
+public static void main(String[] args) {
+  System.out.println(countTrianglesA("inputTri.txt"));
+  System.out.println(countTrianglesB("inputTri.txt"));
+}
+
 }
