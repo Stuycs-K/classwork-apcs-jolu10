@@ -12,7 +12,10 @@ public class Driver{
     System.out.println("arr0 modified to replace empty strings: " + arr0);
     System.out.println("arr1 modified to replace empty strings: " + arr1);
 
-    
+    ArrayList<String> reversedArr0 = ArrayListPractice.makeReversedList(arr0);
+    ArrayList<String> reversedArr1 = ArrayListPractice.makeReversedList(arr1);
+    System.out.println("arr0 in reversed order: " + reversedArr0);
+    System.out.println("arr1 in reversed order: " + reversedArr1);
 
   }
 }
