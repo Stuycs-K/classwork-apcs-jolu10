@@ -17,5 +17,12 @@ public class Driver{
     System.out.println("arr0 in reversed order: " + reversedArr0);
     System.out.println("arr1 in reversed order: " + reversedArr1);
 
+    ArrayList<String> a = ArrayListPractice.createRandomArray(4);
+    ArrayList<String> b = ArrayListPractice.createRandomArray(3);
+    ArrayList<String> mixed = ArrayListPractice.mixLists(a, b);
+    System.out.println("List a: " + a);
+    System.out.println("List b: " + b);
+    System.out.println("Mixed list: " + mixed);
+
   }
 }
