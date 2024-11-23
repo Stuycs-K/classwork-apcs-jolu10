@@ -10,40 +10,37 @@ public class Day1 {
     try {
       File file = new File(filename);
       Scanner scanner = new Scanner(file);
-      Scanner line;
-      while(scanner.hasNextLine()){
-        line = new Scanner(scanner.nextLine());
-        value = new Scanner(scanner.nextInt());
-          if (line.charAt(i) == 'L'){
+      while(scanner.hasNext()) {
+        String line = scanner.next().replaceAll(",", "");
+        char direction = line.charAt(0);
+        int value = Integer.parseInt(line.substring(1));
+          if (direction == 'L'){
             dir = dir - 90;
           }
-          else if (line.charAt(i) == 'R'){
+          else if (direction == 'R'){
               dir = dir + 90;
             }
           dir = (dir + 360) % 360;
-        }
+
         if (dir == 0) {
           y = y + value;
-        }
-        else if (dir == 90) {
+        } else if (dir == 90) {
           x = x + value;
-        }
-        else if (dir == 180) {
+        } else if (dir == 180) {
           y = y - value;
-        }
-        else if (dir == 270) {
+        } else if (dir == 270) {
           x = x - value;
         }
-        }
+      }
       scanner.close();
-    } catch (FileNotFoundException e) {
+      } catch (FileNotFoundException e) {
       System.out.println("File not found.");
     }
     return (Math.abs(x) + Math.abs(y));
   }
 
 public static void main(String[] args) {
-  System.out.println(shortestPath("inputDay1.txt") + " should return 5.");
+  System.out.println("Easter Bunny HQ is " + shortestPath("inputDay1.txt") + " blocks away.");
 }
 
 }
