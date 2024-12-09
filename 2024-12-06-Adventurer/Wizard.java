@@ -47,23 +47,35 @@ public class Wizard extends Adventurer{
   //heall or buff the target adventurer
   public String support(Adventurer other) {
     if (this.getHP() > 0) {
-    other.setHP(other.getHP() + 10);
-    return other.getName() + " was healed by " + this.getName() + ". " + other.getName() + "'s HP is now " + other.getHP() + ".";
-  }
-  else {
-    return this.getName() + " can not support. HP is 0.";
-  }
+      if (this.mana >= 5) {
+        other.setHP(other.getHP() + 10);
+        this.setSpecial(Math.max(0, this.mana - 5));
+        return other.getName() + " was healed by " + this.getName() + ". " + other.getName() + "'s HP is now " + other.getHP() + ". " + this.getName() + "'s mana is now " + this.mana + ".";
+      }
+      else {
+        return this.getName() + " can not heal. Insufficient mana.";
+      }
+    }
+    else {
+      return this.getName() + " can not heal. HP is 0.";
+    }
 }
 
   //heall or buff self
   public String support() {
     if (this.getHP() > 0) {
-    this.setHP(this.getHP() + 10);
-    return this.getName() + " healed themself. " + this.getName() + "'s HP is now " + this.getHP() + ".";
-  }
-  else {
-    return this.getName() + " can not support. HP is 0.";
-  }
+      if (this.mana >= 5) {
+        this.setHP(this.getHP() + 10);
+        this.setSpecial(Math.max(0, this.mana - 5));
+        return this.getName() + " healed themself. " + this.getName() + "'s HP is now " + this.getHP() + ". " + this.getName() + "'s mana is now " + this.mana + ".";
+      }
+      else {
+        return this.getName() + " can not heal. Insufficient mana.";
+      }
+    }
+    else {
+      return this.getName() + " can not heal. HP is 0.";
+    }
 }
 
   //hurt or hinder the target adventurer, consume some special resource
