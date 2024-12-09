@@ -10,8 +10,8 @@ public class Driver {
     System.out.println(p1.getName() + " has " + p1.getHP() + " HP.");
     System.out.println(p2.getName() + " has " + p2.getHP() + " HP.");
 
-    System.out.println("Should return 20: " + p2.getHP());
-    System.out.println("Should return 20: " + p2.getHP());
+    System.out.println(p1.getName() + " has " + p1.getSpecial() + " mana.");
+    System.out.println(p2.getName() + " has " + p2.getSpecial() + " mana.");
 
     System.out.println(p1.attack(p2));
     System.out.println(p2.attack(p1));
