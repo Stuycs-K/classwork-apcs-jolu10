@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Game {
 
-  Adventurer player = new CodeWarrior("Mark", 70, c++);
+  Adventurer player = new CodeWarrior("Mark", 70, "c++");
   Adventurer enemy = new Wizard("Harry", 70);
 
 
@@ -16,5 +16,13 @@ public class Game {
     String userName = userInput.nextLine();
     //Do something with the input
     System.out.println("Username is: " + userName);
+
+    System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+    //Read one line of user input
+    String action = userInput.nextLine();
+    //Do something with the input
+    if (action == "a" || action == "attack") {
+    System.out.println(player.attack(enemy));
   }
+}
 }
