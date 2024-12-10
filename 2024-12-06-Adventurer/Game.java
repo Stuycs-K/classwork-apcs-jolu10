@@ -1,15 +1,16 @@
 import java.util.Scanner;
 public class Game {
   public static void main(String[] args) {
-    Adventurer enemy = new CodeWarrior("Mark", 70, "c++");
-    Adventurer player = new Wizard("Harry", 70);
-
     //do this once
     Scanner userInput = new Scanner(System.in);
     // do the rest many times
     System.out.println("Enter username");
     //Read one line of user input
     String userName = userInput.nextLine();
+
+    Adventurer player = new Wizard(userName, 70);
+    Adventurer enemy = new CodeWarrior("Mark", 70, "c++");
+
     //Do something with the input
     System.out.println("Welcome, " + userName + "! You are a Wizard fighting a CodeWarrior.");
     System.out.println("Start!");
@@ -36,10 +37,10 @@ public class Game {
     break;
     }
     else {
-      System.out.println("Invalid action. Please type a to attack, sp to use special attack, su to support, or quit to quit.");
+      System.out.println("Invalid action. Please type a to attack, sp to use special attack, su to support, or quit to quit. Please try again.");
       continue;
     }
-    System.out.println("Enemy's turn to move.");
+    System.out.println("Opponent's turn to move.");
     int enemyMove = (int) (Math.random() * 3);
     if (enemyMove == 0) {
       System.out.println(enemy.attack(player));
@@ -52,12 +53,12 @@ public class Game {
     }
   }
 
-  if (player.getHP() <= 0) {
-  System.out.println("Oh no! You have lost! You were defeated by CodeWarrior " + enemy.getName() + ".");
-}
+    if (player.getHP() <= 0) {
+    System.out.println("Oh no! You have lost! You were defeated by CodeWarrior " + enemy.getName() + ".");
+  }
 
-if (enemy.getHP() <= 0) {
-  System.out.println("Congrats! You have won! You have defeated CodeWarrior " + enemy.getName() + "." );
-}
-}
+  if (enemy.getHP() <= 0) {
+    System.out.println("Congrats! You have won! You have defeated CodeWarrior " + enemy.getName() + "." );
+    }
+  }
 }
