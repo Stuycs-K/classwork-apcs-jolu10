@@ -39,6 +39,25 @@ public class Game {
       System.out.println("Invalid action. Please type a to attack, sp to use special attack, su to support, or quit to quit.");
       continue;
     }
+    System.out.println("Enemy's turn to move.");
+    int enemyMove = (int) (Math.random() * 3);
+    if (enemyMove == 0) {
+      System.out.println(enemy.attack(player));
+    }
+    else if (enemyMove == 1) {
+      System.out.println(enemy.specialAttack(player));
+    }
+    else {
+      System.out.println(enemy.support());
+    }
   }
+
+  if (player.getHP() <= 0) {
+  System.out.println("Oh no! You have lost! You were defeated by CodeWarrior " + enemy.getName() + ".");
+}
+
+if (enemy.getHP() <= 0) {
+  System.out.println("Congrats! You have won! You have defeated CodeWarrior " + enemy.getName() + "." );
+}
 }
 }
